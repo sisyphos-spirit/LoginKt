@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+class MainActivity : AppCompatActivity()
+{
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -20,24 +24,28 @@ class MainActivity : AppCompatActivity() {
 
 
         inicioSesion.setOnClickListener {
-            Toast.makeText(this, "Iniciando sesión", Toast.LENGTH_SHORT).show()
+            val snack = Snackbar.make(it, "Iniciando sesión", Snackbar.LENGTH_LONG)
+            snack.show()
         }
 
         regitrarse.setOnClickListener {
-            Toast.makeText(this, "Página de registro", Toast.LENGTH_SHORT).show()
+            val snack = Snackbar.make(it, "Página de registro", Snackbar.LENGTH_LONG)
+            snack.show()
         }
 
         cambiarContrasenya.setOnClickListener {
-            Toast.makeText(this, "Cambiar contraseña", Toast.LENGTH_SHORT).show()
+            val snack = Snackbar.make(it, "Cambiar contraseña", Snackbar.LENGTH_LONG)
+            snack.show()
         }
 
         inicioGoogle.setOnClickListener {
-            Toast.makeText(this, "Inicio con Google", Toast.LENGTH_SHORT).show()
+            val snack = Snackbar.make(it, "Inicio con Google", Snackbar.LENGTH_LONG)
+            snack.show()
         }
 
         inicioFacebook.setOnClickListener {
-            Toast.makeText(this, "Inicio con Facebook", Toast.LENGTH_SHORT).show()
+            val snack = Snackbar.make(it, "Inicio con Facebook", Snackbar.LENGTH_LONG)
+            snack.show()
         }
-
     }
 }

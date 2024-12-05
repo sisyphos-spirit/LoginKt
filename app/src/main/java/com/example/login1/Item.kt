@@ -1,3 +1,3 @@
 package com.example.login1
 
-data class Item (val img:String = "", val nombre:String = "Profesor 1", val modulo:String = "Modulo")
+data class Item (val img:Int, val nombre:String, val valor:String, val fortaleza:String, val debilidad:String, val fav:Boolean)

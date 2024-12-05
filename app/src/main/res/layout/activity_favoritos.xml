@@ -6,12 +6,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".FavoritosActivity">
-
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_margin="20dp"
-            android:layout_width="371dp"
-            android:layout_height="691dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="1.0" tools:listitem="@layout/listview_item" android:id="@+id/lv"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_layout"
+            android:id="@+id/rv"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

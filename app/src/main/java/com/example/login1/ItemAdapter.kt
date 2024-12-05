@@ -1,33 +1,49 @@
 package com.example.login1
 
 import android.content.Context
+import android.icu.text.Transliterator.Position
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.login1.databinding.ItemLayoutBinding
 
-class ItemAdapter(context: Context, items: List<Item> ) : ArrayAdapter <Item>(context, 0, items)
+class ItemAdapter(private val context: Context, private val items: List<Item> ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>()
 {
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View
+    override fun onCreateViewHolder(parent: ViewGroup, ViewType: Int): ItemViewHolder
     {
-        var itemView = convertView
+        val binding = itemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ItemViewHolder (binding)
+    }
 
-        if (itemView == null)
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int)
+    {
+        holder.bind(items[position])
+    }
+
+    override fun getItemCount(): Int
+    {
+        return items.size
+    }
+
+    class ItemViewHolder(private val binding: ItemLayoutBinding): RecyclerView.ViewHolder(binding.root)
+    {
+        fun bind(data: Item)
         {
-            itemView = LayoutInflater.from(context).inflate(R.layout.listview_item, parent, false)
+            binding.nombre.text = data.nombre
+            binding.valor.text = data.valor
+            binding.debilidad.text = data.debilidad
+            binding.fortaleza.text = data.fortaleza
+            binding.iv.setImageResource(data.img)
 
-            val item = getItem(position)
-
-            val img: ImageView = itemView.findViewById(R.id.iv)
-            val nombreTextView: TextView = itemView.findViewById(R.id.tvNombreP)
-            val moduloTextView: TextView = itemView.findViewById(R.id.tvModulo)
-
-            img.setImageResource(R.drawable.sherlockicon)
-            nombreTextView.text = item?.nombre
-            moduloTextView.text = item?.modulo
+            if (data.fav)
+            {
+                binding.fabFav
+            }
         }
-        return itemView!!
+
+
     }
 }

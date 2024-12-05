@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Login1</string>
+    <string name="title">Login</string>
+    <string name="button1">Iniciar sesión</string>
+    <string name="email">Dirección email</string>
+    <string name="password">Contraseña</string>
+    <string name="AltLogo">Sherlock logo</string>
+    <string name="googleIcon">Google icon</string>
+    <string name="facebookIcon">Facebook icon</string>
+    <string name="forgotPassword">¿Has olvidado tu
+        <a href="https://www.google.com/?hl=es">contraseña?</a>
+    </string>
+    <string name="notAccount">¿No tienes una cuenta?</string>
+    <string name="Register">Regístrate</string>
+</resources>

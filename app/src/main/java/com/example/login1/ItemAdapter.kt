@@ -12,9 +12,10 @@ import com.example.login1.databinding.ItemLayoutBinding
 
 class ItemAdapter(private val context: Context, private val items: List<Item> ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>()
 {
+
     override fun onCreateViewHolder(parent: ViewGroup, ViewType: Int): ItemViewHolder
     {
-        val binding = itemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder (binding)
     }
 
@@ -40,10 +41,22 @@ class ItemAdapter(private val context: Context, private val items: List<Item> ) 
 
             if (data.fav)
             {
-                binding.fabFav
+                binding.fabFav.setImageResource (R.drawable.fav_selected)
+            }else
+            {
+                binding.fabFav.setImageResource(R.drawable.fav_unselected)
+            }
+
+            binding.fabFav.setOnClickListener{
+                if (data.fav)
+                {
+                    binding.fabFav.setImageResource (R.drawable.fav_unselected)
+                }else
+                {
+                    binding.fabFav.setImageResource(R.drawable.fav_selected)
+                }
+                data.fav = !data.fav
             }
         }
-
-
     }
 }

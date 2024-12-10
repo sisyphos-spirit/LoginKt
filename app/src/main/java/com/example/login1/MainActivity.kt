@@ -1,5 +1,6 @@
 package com.example.login1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,9 +24,10 @@ class MainActivity : AppCompatActivity()
         val inicioFacebook: ImageButton = findViewById(R.id.imageButton2)
 
 
-        inicioSesion.setOnClickListener {
-            val snack = Snackbar.make(it, "Iniciando sesión", Snackbar.LENGTH_LONG)
-            snack.show()
+        inicioSesion.setOnClickListener()
+        { view ->
+            val intent: Intent = Intent(this, FavoritosActivity::class.java)
+            startActivity(intent)
         }
 
         regitrarse.setOnClickListener {
@@ -43,9 +45,10 @@ class MainActivity : AppCompatActivity()
             snack.show()
         }
 
-        inicioFacebook.setOnClickListener {
-            val snack = Snackbar.make(it, "Inicio con Facebook", Snackbar.LENGTH_LONG)
-            snack.show()
+        inicioFacebook.setOnClickListener()
+        { view ->
+            val intent: Intent = Intent(this, ContactoActivity::class.java)
+            startActivity(intent)
         }
     }
 }
